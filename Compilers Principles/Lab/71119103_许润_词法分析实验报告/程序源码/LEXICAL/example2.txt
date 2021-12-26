@@ -1,0 +1,11 @@
+int a[12];
+int i = -15;
+double j = 11.04;
+int b_x = 3.14E+10;
+char array[8];
+int x = i;
+if(x == i){
+    while(i) i = i + 13;
+}
+return 0;
+$

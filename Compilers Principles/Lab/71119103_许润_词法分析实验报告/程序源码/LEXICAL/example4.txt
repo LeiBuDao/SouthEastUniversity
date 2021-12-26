@@ -1,0 +1,28 @@
+	if(m==1)
+	{   
+		int a=1;
+		double y=0;
+		while(fabs(t)>=pow(0.1,k))
+		{
+			t=pow(x,2*n-1)*a/jc(2*n-1);
+			a=-a;
+		    y+=t;
+			n++;
+		}
+		cout<<"sin(x)="<<y<<endl;
+	}
+		
+	if(m==2)
+	{   
+		int b=-1; 
+		double y=1;
+		while(fabs(t)>=pow(0.1,k))
+		{
+			t=pow(x,2*n)*b/jc(2*n);
+			b=-b;
+		    y+=t;
+			n++;
+		}
+		cout<<"cos(x)="<<y<<endl;
+	}
+$

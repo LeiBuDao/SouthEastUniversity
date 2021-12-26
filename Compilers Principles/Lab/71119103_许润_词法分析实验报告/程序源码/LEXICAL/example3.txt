@@ -1,0 +1,12 @@
+void transform(char *a)
+{
+	
+
+	while(*a)
+	{
+	if(*a>='A'&&*a<='Z') *a=*a-'A'+'a';
+    else if(*a>='a'&&*a<='z') *a=*a-'a'+'A';
+	a++;
+	}
+}
+$

@@ -1,0 +1,252 @@
+[lbrace]  {
+program   -> block
+block     -> { stmts }
+[while]   while
+stmts     -> stmt stmts
+stmt      -> while ( boolean ) stmt
+[lpara]   (
+[id]      i
+boolean   -> expr rboolean
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> id
+[relop]   <=
+rterm     -> ε
+rexpr     -> ε
+rboolean  -> relop expr
+[num]     100
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> num
+[rpara]   )
+rterm     -> ε
+rexpr     -> ε
+[lbrace]  {
+stmt      -> block
+block     -> { stmts }
+[if]      if
+stmts     -> stmt stmts
+stmt      -> if ( boolean ) stmt else_part
+[lpara]   (
+[id]      i
+boolean   -> expr rboolean
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> id
+[relop]   ==
+rterm     -> ε
+rexpr     -> ε
+rboolean  -> relop expr
+[num]     2
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> num
+[rpara]   )
+rterm     -> ε
+rexpr     -> ε
+[id]      sum
+stmt      -> id = expr
+[assign]  =
+[id]      sum
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> id
+[plus]    +
+rterm     -> ε
+rexpr     -> + term rexpr
+[id]      i
+term      -> factor rterm
+factor    -> id
+[semi]    ;
+rterm     -> ε
+rexpr     -> ε
+[else]    else
+else_part -> else stmt
+[if]      if
+stmt      -> if ( boolean ) stmt else_part
+[lpara]   (
+[id]      i
+boolean   -> expr rboolean
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> id
+[relop]   >
+rterm     -> ε
+rexpr     -> ε
+rboolean  -> relop expr
+[num]     5
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> num
+[rpara]   )
+rterm     -> ε
+rexpr     -> ε
+[do]      do
+stmt      -> do stmt while ( boolean )
+[lbrace]  {
+stmt      -> block
+block     -> { stmts }
+[id]      sum
+stmts     -> stmt stmts
+stmt      -> id = expr
+[assign]  =
+[id]      sum
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> id
+[times]   *
+rterm     -> * factor rterm
+[lpara]   (
+factor    -> ( expr )
+[num]     2
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> num
+[minus]   -
+rterm     -> ε
+rexpr     -> - term rexpr
+[id]      sum
+term      -> factor rterm
+factor    -> id
+[rpara]   )
+rterm     -> ε
+rexpr     -> ε
+[divide]  /
+rterm     -> / factor rterm
+[num]     2
+factor    -> num
+[plus]    +
+rterm     -> ε
+rexpr     -> + term rexpr
+[num]     1
+term      -> factor rterm
+factor    -> num
+[semi]    ;
+rterm     -> ε
+rexpr     -> ε
+[if]      if
+stmts     -> stmt stmts
+stmt      -> if ( boolean ) stmt else_part
+[lpara]   (
+[id]      sum
+boolean   -> expr rboolean
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> id
+[relop]   <
+rterm     -> ε
+rexpr     -> ε
+rboolean  -> relop expr
+[num]     0
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> num
+[rpara]   )
+rterm     -> ε
+rexpr     -> ε
+[break]   break
+stmt      -> break
+[semi]    ;
+[rbrace]  }
+else_part -> ε
+stmts     -> ε
+[while]   while
+[lpara]   (
+[id]      i
+boolean   -> expr rboolean
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> id
+[relop]   <
+rterm     -> ε
+rexpr     -> ε
+rboolean  -> relop expr
+[num]     0
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> num
+[rpara]   )
+rterm     -> ε
+rexpr     -> ε
+[semi]    ;
+[if]      if
+else_part -> ε
+stmts     -> stmt stmts
+stmt      -> if ( boolean ) stmt else_part
+[lpara]   (
+[id]      i
+boolean   -> expr rboolean
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> id
+[relop]   <=
+rterm     -> ε
+rexpr     -> ε
+rboolean  -> relop expr
+[num]     2
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> num
+[times]   *
+rterm     -> * factor rterm
+[lpara]   (
+factor    -> ( expr )
+[id]      i
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> id
+[plus]    +
+rterm     -> ε
+rexpr     -> + term rexpr
+[num]     1
+term      -> factor rterm
+factor    -> num
+[rpara]   )
+rterm     -> ε
+rexpr     -> ε
+[rpara]   )
+rterm     -> ε
+rexpr     -> ε
+[id]      sum
+stmt      -> id = expr
+[assign]  =
+[num]     1
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> num
+[semi]    ;
+rterm     -> ε
+rexpr     -> ε
+[else]    else
+else_part -> else stmt
+[id]      sum
+stmt      -> id = expr
+[assign]  =
+[num]     0
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> num
+[semi]    ;
+rterm     -> ε
+rexpr     -> ε
+[id]      i
+stmts     -> stmt stmts
+stmt      -> id = expr
+[assign]  =
+[id]      i
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> id
+[plus]    +
+rterm     -> ε
+rexpr     -> + term rexpr
+[num]     2
+term      -> factor rterm
+factor    -> num
+[semi]    ;
+rterm     -> ε
+rexpr     -> ε
+[rbrace]  }
+stmts     -> ε
+[rbrace]  }
+stmts     -> ε

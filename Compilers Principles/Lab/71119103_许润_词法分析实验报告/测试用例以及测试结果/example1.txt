@@ -1,0 +1,19 @@
+    char resourceProject[10000];
+    char token[20] = { 0 };
+    int syn = -1, i;//初始化
+    int pProject = 0;//源程序指针
+    FILE* fp, * fp1;
+    if ((fp = fopen("example.txt", "r")) == NULL)
+    {//打开源程序
+        cout << "can't open this file";
+        exit(0);
+    }
+    resourceProject[pProject] = fgetc(fp);
+    while (resourceProject[pProject] != '$')
+    {//将源程序读入resourceProject[]数组
+        pProject++;
+        resourceProject[pProject] = fgetc(fp);
+    }
+    resourceProject[++pProject] = '\0';
+    fclose(fp);
+$

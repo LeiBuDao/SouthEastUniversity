@@ -1,0 +1,33 @@
+[lbrace]  {
+program   -> block
+block     -> { stmts }
+[while]   while
+stmts     -> stmt stmts
+stmt      -> while ( boolean ) stmt
+[lpara]   (
+[id]      i
+boolean   -> expr rboolean
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> id
+[relop]   <=
+rterm     -> ε
+rexpr     -> ε
+rboolean  -> relop expr
+[num]     100
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> num
+[rpara]   )
+rterm     -> ε
+rexpr     -> ε
+[lbrace]  {
+stmt      -> block
+block     -> { stmts }
+[rbrace]  }
+stmts     -> ε
+[id]      i
+stmts     -> stmt stmts
+stmt      -> id = expr
+[plus]    +
+syntax error at line 3

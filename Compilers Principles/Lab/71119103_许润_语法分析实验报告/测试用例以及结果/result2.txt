@@ -1,0 +1,36 @@
+[lbrace]  {
+program   -> block
+block     -> { stmts }
+[if]      if
+stmts     -> stmt stmts
+stmt      -> if ( boolean ) stmt else_part
+[lpara]   (
+[id]      a
+boolean   -> expr rboolean
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> id
+[relop]   <=
+rterm     -> ε
+rexpr     -> ε
+rboolean  -> relop expr
+[num]     5
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> num
+[rpara]   )
+rterm     -> ε
+rexpr     -> ε
+[id]      b
+stmt      -> id = expr
+[assign]  =
+[num]     1
+expr      -> term rexpr
+term      -> factor rterm
+factor    -> num
+[semi]    ;
+rterm     -> ε
+rexpr     -> ε
+[rbrace]  }
+else_part -> ε
+stmts     -> ε
